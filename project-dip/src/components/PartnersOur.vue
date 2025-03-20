@@ -44,7 +44,7 @@
     align-items: center;
     justify-content: center;
     gap: 58px;
-
+    margin-bottom: 150px;
 }
 
 .partners-info {

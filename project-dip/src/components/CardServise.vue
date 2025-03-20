@@ -5,7 +5,10 @@
       </div>
       <h3 class="card-subtitle">{{ title }}</h3>
       <p class="card-text">{{ description }}</p>
-      <button class="learn-more">Learn More</button>
+      <router-link  to="/detailservice">
+        <button class="learn-more">Learn More</button>
+      </router-link>
+      
     </div>
   </template>
   

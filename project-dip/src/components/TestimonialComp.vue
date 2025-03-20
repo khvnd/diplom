@@ -61,6 +61,7 @@
   padding: 50px;
   height: 1200px;
   overflow: hidden;
+  margin-bottom: 150px;
 }
 
 .testimonial-subtitle {

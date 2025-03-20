@@ -1,6 +1,7 @@
 <template>
     <div class="home-price">
         <div class="home-price-info">
+          <img src="/img/Light1.svg" class="price-gradient">
             <h3 class="home-price-subtitle">our pricing</h3>
             <h2 class="home-price-title">Affordable VR Services for Everyone</h2>
             <p class="home-price-text">At VRNas, we believe that everyone should have access to the benefits of VR. That's why we offer a range of pricing options to meet the needs of any budget.</p>
@@ -59,138 +60,147 @@
       };
       </script>
       
-      <style scoped>
-      .pricing-section {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-        align-items: center;
-        padding: 40px;
-        background: rgba(37, 37, 50, 0.81);
-        margin-bottom: 150px;
-        margin-top: 40px;
-      }
+<style scoped>
+  .pricing-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: center;
+    padding: 40px;
+    background: rgba(37, 37, 50, 0.81);
+    margin-bottom: 150px;
+    margin-top: 40px;
+  }
       
-      .info {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-      }
+  .price-gradient {
+    position: absolute;
+    width: 601px;
+    top: -193px;
+    left: -203px;
+    z-index: -1;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
       
-      .info-block {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-      }
+  .info-block {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
     
-      .info-title {
-        color: rgb(255, 255, 255);
-        font-size: 18px;
-        font-weight: 400;
-        padding-bottom: 12px;
-      }
+  .info-title {
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    font-weight: 400;
+    padding-bottom: 12px;
+  }
     
-      .info-text {
-        color: rgb(176, 176, 178);
-    
+  .info-text {
+    color: rgb(176, 176, 178);
     font-size: 16px;
     font-weight: 400;
     line-height: 28px;
-      }
+  }
       
-      .icon {
-        width: 40px;
-        height: 40px;
-      }
+  .icon {
+    width: 40px;
+    height: 40px;
+  }
       
-      .image-container {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        border-left: 1px solid rgb(255, 255, 255);
-      }
+  .image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    border-left: 1px solid rgb(255, 255, 255);
+  }
       
-      .vr-user {
-        width: 100%;
-        max-width: 400px;
-      }
+  .vr-user {
+    width: 100%;
+    max-width: 400px;
+  }
       
-      .price-box {
-        width: 321px;
-        position: absolute;
-        bottom: -16%;
-        right: 38%;
-        background: rgb(37, 37, 50);
-        padding: 20px;
-        text-align: center;
-        color: white;
-        border: 1px solid; 
-        border-image: linear-gradient(45deg, #ff00ff, #00ffff) 1;
+  .price-box {
+    width: 321px;
+    position: absolute;
+    bottom: -16%;
+    right: 38%;
+    background: rgb(37, 37, 50);
+    padding: 20px;
+    text-align: center;
+    color: white;
+    border: 1px solid; 
+    border-image: linear-gradient(45deg, #ff00ff, #00ffff) 1;
         
-      }
+  }
       
       
       
-      .btn {
-        background: linear-gradient(90.00deg, rgb(12, 186, 241),rgb(233, 92, 233) 100%);
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        cursor: pointer;
-        font-size: 14px;
-        font-weight: 700;
-        color: rgb(255, 255, 255);
-        text-align: center;
-        text-transform: uppercase;
+  .btn {
+    background: linear-gradient(90.00deg, rgb(12, 186, 241),rgb(233, 92, 233) 100%);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    text-transform: uppercase;
         
-      }
+  }
 
-      .price-text {
-        color: rgb(255, 255, 255);
-        font-size: 60px;
-        font-weight: 600;
-        padding-bottom: 14px;
-      }
+  .price-text {
+    color: rgb(255, 255, 255);
+    font-size: 60px;
+    font-weight: 600;
+    padding-bottom: 14px;
+  }
 
-      span {
-        color: rgb(209, 209, 209);
-        font-size: 14px;
-        font-weight: 500;
-      }
+  span {
+    color: rgb(209, 209, 209);
+    font-size: 14px;
+    font-weight: 500;
+  }
       
-      .guarantee {
-        font-size: 12px;
-        margin-top: 5px;
-        font-weight: 400;
-        color: rgb(176, 176, 178);
-        padding-top: 14px;
-      }
+  .guarantee {
+    font-size: 12px;
+    margin-top: 5px;
+    font-weight: 400;
+    color: rgb(176, 176, 178);
+    padding-top: 14px;
+  }
 
-      .gradient {
-        position: absolute;
+  .gradient {
+    position: absolute;
     width: 854px;
     height: 898px;
-    top: -241px;
+    top: -310px;
     transform: rotate(23deg);
-      }
+    z-index: -1;
+    left: -13px;
+  }
       
-      @media (max-width: 768px) {
-        .pricing-section {
-          grid-template-columns: 1fr;
-          text-align: center;
-        }
+  @media (max-width: 768px) {
+    .pricing-section { 
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
       
-        .info-block {
-          flex-direction: column;
-          align-items: center;
-        }
+    .info-block {
+      flex-direction: column;
+      align-items: center;
+    }
       
-        .price-box {
-          bottom: 5%;
-          right: 50%;
-          transform: translateX(50%);
-        }
-      }
+    .price-box {
+      bottom: 5%;
+      right: 50%;
+      transform: translateX(50%);
+    }
+  }
 
 
 .home-price {
@@ -199,6 +209,7 @@
 
 .home-price-info {
     max-width: 811px; 
+    position: relative;
 }
 
 .home-price-subtitle {
@@ -214,25 +225,25 @@
 }
 
 .home-price-title {
-    color: rgb(255, 255, 255);
-    font-size: 47px;
-    font-weight: 600;
+  color: rgb(255, 255, 255);
+  font-size: 47px;
+  font-weight: 600;
 }
 
 .home-price-text {
-    color: rgb(209, 209, 209);
-    font-size: 18px;
-    font-weight: 300;
-    line-height: 28px;
+  color: rgb(209, 209, 209);
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 28px;
 }
 
 .home-price-content {
-    height: 635px;
-    background: rgba(37, 37, 50, 0.81);
-    border: 1px solid rgba(255, 255, 255, 0.3)
-    rgba(255, 255, 255, 0);
+  height: 635px;
+  background: rgba(37, 37, 50, 0.81);
+  border: 1px solid rgba(255, 255, 255, 0.3)
+  rgba(255, 255, 255, 0);
 }
 
-      </style>
+</style>
       
 

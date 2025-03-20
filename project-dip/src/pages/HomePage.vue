@@ -10,7 +10,8 @@
       <HomePrice />
       <PartnersOur />
       <HomeArticles />
-      <GetMail />
+      
+      
     </div>
   </template>
     
@@ -26,7 +27,8 @@
     import HomePrice from "@/components/HomePrice.vue";
     import PartnersOur from "@/components/PartnersOur.vue";
     import HomeArticles from "@/components/HomeArticles.vue";
-    import GetMail from "@/components/GetMail.vue";
+    
+    
     
 
     export default {
@@ -40,8 +42,7 @@
         TestimonialComp,
         HomePrice,
         PartnersOur,
-        HomeArticles,
-        GetMail
+        HomeArticles
       }
     }
   </script>

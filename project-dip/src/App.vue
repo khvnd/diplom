@@ -1,18 +1,22 @@
 <template>
  <MainHeader />
  <router-view />
+ <GetMail />
+ <MainFooter />
 </template>
 
 
 <script>
 import MainHeader from '@/components/MainHeader.vue';
+import MainFooter from './components/MainFooter.vue';
+import GetMail from './components/GetMail.vue';
 
 export default {
     name: 'App',
     components: {
-      MainHeader
-      
-      
+      MainHeader,
+      MainFooter,
+      GetMail
     }
   }
 </script>

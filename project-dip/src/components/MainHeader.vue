@@ -1,4 +1,5 @@
 <template>
+  <div class="line-section">
  <header>
     <img src="/img/logo.png" alt="logo" class="logo">
 
@@ -8,22 +9,26 @@
     <label for="burger-toggle" class="burger-button">☰</label>
 
     <div class="menu">
-      <router-link class="a-menu" to="/" >Home</router-link>
-      <router-link class="a-menu" to="/">About us</router-link>
-      <router-link class="a-menu" to="/">Service</router-link>
-      <router-link class="a-menu" to="/">Price</router-link> 
+      <router-link  to="/" class="a-menu" >Home</router-link>
+      <router-link  to="/about" class="a-menu">About us</router-link>
+      <router-link  to="/service" class="a-menu">Service</router-link>
+      <router-link  to="#" class="a-menu">Price</router-link>
+      <router-link  to="#" class="a-menu">Blog</router-link>  
     </div>
     <a href="#" class="a-bord">Contact us</a>
 
     <!-- Мобильное меню -->
     <div class="mobile-menu">
       <router-link class="a-menu" to="/">Home</router-link>
-      <router-link class="a-menu" to="/">About us</router-link>
-      <router-link class="a-menu" to="/">Service</router-link>
-      <router-link class="a-menu" to="/">Price</router-link>
+      <router-link class="a-menu" to="/about">About us</router-link>
+      <router-link class="a-menu" to="/service">Service</router-link>
+      <router-link class="a-menu" to="#">Price</router-link>
+      <router-link  to="#" class="a-menu">Blog</router-link> 
       <a href="#" class="a-bord">Contact us</a>
     </div>
 </header>
+<div class="line-img"></div>
+</div>
 </template>
 
 <script>
@@ -124,6 +129,15 @@ header img{
   }
 }
 
-
+.line-img {
+  background-image: url(/public/img/lineheader.png);
+  background-repeat: no-repeat;
+  width: 1200px;
+    height: 381.2px;
+    position: absolute;
+    top: 1px;
+    right: -465px;
+    z-index: -1;
+}
 
 </style>

@@ -1,7 +1,7 @@
 <template>
-    <div class="about-banner">
-        <h3 class="banner-title">Detail Service</h3>
-        <img src="/img/light1.svg" class="banner-gradient">
+    <div class="detail-banner">
+        <h3 class="detail-banner-title">Detail Service</h3>
+        <img src="/img/light1.svg" class="detail-banner-gradient">
     </div>
 </template>
 
@@ -12,7 +12,7 @@ export default {
 </script>
 
 <style>
- .about-banner {
+ .detail-banner {
     height: 216px;
     border-bottom: 1px solid;
     border-image-source: linear-gradient(-45deg, #0cbaf1, #e95ce9);
@@ -22,7 +22,7 @@ export default {
     position: relative;
  }
 
- .banner-title {
+ .detail-banner-title {
     color: rgb(255, 255, 255);
     font-size: 64px;
     font-weight: 600;
@@ -30,7 +30,7 @@ export default {
     
  }
 
- .banner-gradient {
+ .detail-banner-gradient {
     position: absolute;
     top: -221px;
     left: 307px;

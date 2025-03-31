@@ -12,8 +12,8 @@
       <router-link  to="/" class="a-menu" >Home</router-link>
       <router-link  to="/about" class="a-menu">About us</router-link>
       <router-link  to="/service" class="a-menu">Service</router-link>
-      <router-link  to="#" class="a-menu">Price</router-link>
-      <router-link  to="#" class="a-menu">Blog</router-link>  
+      <router-link  to="/price" class="a-menu">Price</router-link>
+      <router-link  to="/blog" class="a-menu">Blog</router-link>  
     </div>
     <a href="#" class="a-bord">Contact us</a>
 
@@ -22,8 +22,8 @@
       <router-link class="a-menu" to="/">Home</router-link>
       <router-link class="a-menu" to="/about">About us</router-link>
       <router-link class="a-menu" to="/service">Service</router-link>
-      <router-link class="a-menu" to="#">Price</router-link>
-      <router-link  to="#" class="a-menu">Blog</router-link> 
+      <router-link class="a-menu" to="/price">Price</router-link>
+      <router-link  to="/blog" class="a-menu">Blog</router-link> 
       <a href="#" class="a-bord">Contact us</a>
     </div>
 </header>
@@ -134,7 +134,7 @@ header img{
   background-repeat: no-repeat;
   width: 1200px;
     height: 381.2px;
-    position: absolute;
+    position: fixed;
     top: 1px;
     right: -465px;
     z-index: -1;

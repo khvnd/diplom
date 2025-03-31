@@ -6,15 +6,19 @@
                 <h3 class="team-subtitle">OUR TEAM</h3>
                 <h2 class="team-title">Our Professionals Team</h2>
             </div>
+           <router-link to="/team">
             <button class="btn-see-all">see all</button>
+           </router-link> 
         </div>
     <div class="team-container">
       <div v-for="(member, index) in teamMembers" :key="index" class="team-card">
+        <div class="ab-background">
         <img :src="member.image" :alt="member.name" class="team-image" />
         <div class="overlay"></div>
         <div class="team-info">
           <h3 class="name">{{ member.name }}</h3>
           <p class="role">{{ member.role }}</p>
+        </div>
         </div>
       </div>
     </div>
@@ -76,11 +80,22 @@
   }
   
   .team-card {
+    width: 293px;
+    height: 388px;
+    background: rgb(37 37 50);
+    border: 2px solid;
+    border-image-source: linear-gradient(147deg,rgba(255, 255, 255, 0.164),rgb(255, 255, 255, 0));
+    border-image-slice: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+  }
+  .ab-background {
     position: relative;
     width: 274px;
     height: 370px;
     overflow: hidden;
-    
   }
 
   .team-card:hover {

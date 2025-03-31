@@ -1,18 +1,18 @@
 <template>
-    <div class="service-banner">
-        <h3 class="service-banner-title">Our Service</h3>
-        <img src="/img/light1.svg" class="service-banner-gradient">
+    <div class="price-banner">
+        <h3 class="price-banner-title">Pricing Plan</h3>
+        <img src="/img/light1.svg" class="price-banner-gradient">
     </div>
 </template>
 
 <script>
 export default {
-     name: 'AboutBanner',
+     name: 'PriceBanner',
    }
 </script>
 
 <style>
- .service-banner {
+ .price-banner {
     height: 216px;
     border-bottom: 1px solid;
     border-image-source: linear-gradient(-45deg, #0cbaf1, #e95ce9);
@@ -22,7 +22,7 @@ export default {
     position: relative;
  }
 
- .service-banner-title {
+ .price-banner-title {
     color: rgb(255, 255, 255);
     font-size: 64px;
     font-weight: 600;
@@ -30,12 +30,12 @@ export default {
     
  }
 
- .service-banner-gradient {
+ .price-banner-gradient {
     position: absolute;
-    top: -221px;
-    left: 307px;
-    transform: rotate(8deg);
-    width: 544px;
+    top: -245px;
+    left: 108px;
+    transform: rotate(19deg);
+    width: 599px;
     z-index: -1;
  }
 </style>

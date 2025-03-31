@@ -31,7 +31,7 @@ export default {
 
 body {
     font-family: "Chakra Petch";
-    background-color: black;
+    background-color:#101010 ;
    max-width: 1200px;
     margin: 0 auto;
 }

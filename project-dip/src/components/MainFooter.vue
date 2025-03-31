@@ -15,9 +15,9 @@
                 <div class="quicklinks">
                     <h3 class="info-title">Quicklinks</h3>
                     <router-link class="a-links" to="/" >Home</router-link>
-                    <router-link class="a-links" to="/">Pricing Plan</router-link>
+                    <router-link class="a-links" to="/price">Pricing Plan</router-link>
                     <router-link class="a-links" to="/service">Service</router-link>
-                    <router-link class="a-links" to="/">Blog</router-link>
+                    <router-link class="a-links" to="/blog">Blog</router-link>
                     <router-link class="a-links" to="/">Our Team</router-link> 
                 </div>
                 <div class="support">
@@ -57,7 +57,7 @@
     }
 
     .img-line {
-        position: absolute;
+        position: fixed;
         width: 1011px;
         height: 498px;
         left: 3px;

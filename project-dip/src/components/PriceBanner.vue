@@ -33,9 +33,40 @@ export default {
  .price-banner-gradient {
     position: absolute;
     top: -245px;
-    left: 108px;
-    transform: rotate(19deg);
+    left: 264px;
+    transform: rotate(360deg);
     width: 599px;
     z-index: -1;
+ }
+
+ @media (max-width: 1024px) {
+   .price-banner-gradient {
+      top: -251px;
+      left: 186px;
+   }
+ }
+
+ @media (max-width: 768px) {
+   .price-banner-gradient {
+      top: -263px;
+      left: 63px;
+      width: 585px;
+   }
+ } 
+ 
+ @media (max-width: 425px) {
+   .price-banner-title {
+      font-size: 40px;
+   }
+
+   .price-banner-gradient {
+      top: -197px;
+      left: -22px;
+      width: 423px;
+   }
+
+   .price-banner {
+      margin-bottom: 100px;
+   }
  }
 </style>

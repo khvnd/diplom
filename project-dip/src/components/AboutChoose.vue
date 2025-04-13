@@ -112,4 +112,34 @@
     text-align: left;
    
 }
+
+@media (max-width: 1024px) {
+
+}
+
+@media (max-width: 768px) {
+    
+}
+
+@media (max-width: 425px) {
+    .choose-info-title {
+        font-size: 32px;
+        line-height: 42px;
+    }
+
+    .about-choose {
+        gap: 32px;
+        margin-bottom: 100px;
+    }
+
+    .about-section {
+        padding: 49px 0;
+        gap: 53px;
+    }
+
+    .item {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
 </style>

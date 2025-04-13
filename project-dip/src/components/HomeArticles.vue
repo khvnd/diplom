@@ -6,7 +6,10 @@
             <h3 class="articles-subtitle">OUR ARTICLES</h3>
             <h2 class="articles-title">Stay Up-to-Date with Our VR Insights</h2>
         </div>
-        <button class="see-all">see all</button>
+        <router-link to="/blog">
+            <button class="see-all">see all</button>
+        </router-link>
+        
     </div>
     <SliderArticles />
     <ScrollList />
@@ -67,5 +70,40 @@ import SliderArticles from '@/components/SliderArticles.vue';
     font-weight: 700;
     color: rgb(255, 255, 255);
     text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.see-all:hover {
+  box-shadow: 0 0 10px #3498db, 0 0 40px #3498db;
+}
+
+@media (max-width: 1024px) {
+    .our-articles {
+        height: auto;
+        margin: 100px auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .our-articles {
+        height: auto;
+        margin: 100px auto;
+    }
+}
+
+@media (max-width: 425px) {
+    .our-articles {
+        height: auto;
+        margin: 100px auto;
+    }
+
+    .articles-title {
+        font-size: 32px;
+    }
+
+    .content-articles {
+        gap: 17px;
+    }
 }
 </style>

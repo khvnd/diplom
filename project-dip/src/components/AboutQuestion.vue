@@ -1,8 +1,8 @@
 <template>
     <div class="about-question">
         <div class="question-image">
-            <div class="bg"></div>
-            <img src="/img/chooseabout.png" class="img3">
+            <div class="bg-question"></div>
+            <img src="/img/chooseabout.png" class="img-question">
             <div class="gradient-question"></div>
         </div>
         <div class="question-choose-info">
@@ -134,7 +134,7 @@ border-bottom: 1px solid rgba(255, 255, 255, 0.35);
     position: relative;
 }
 
-.bg {
+.bg-question {
     position: absolute;
     width: 398.94px;
     height: 496.53px;
@@ -145,7 +145,7 @@ border-bottom: 1px solid rgba(255, 255, 255, 0.35);
  }
 
 
-.img3 {
+.img-question {
     position: relative;
     left: 14.29px;
     top: -38px;
@@ -159,7 +159,127 @@ border-bottom: 1px solid rgba(255, 255, 255, 0.35);
     top: -104px;
     background: url(http://localhost:8080/img/Light1.8094ae70.svg) no-repeat center;
     background-size: cover;
-    transform: rotate(358deg);
+    transform: rotate(360deg);
     pointer-events: none;
+}
+
+@media (max-width: 1024px) {
+    .about-question {
+        flex-wrap: nowrap;
+        gap: 0;
+    }
+
+    .img-question {
+        width: 500px;
+        top: 4px;
+        left: 0;
+    }
+
+    .bg-question {
+        width: 373.94px;
+        height: 462.53px;
+        top: 115px;
+        left: 2px;
+    }
+
+    .gradient-question {
+        width: 377px;
+        height: 487px;
+        left: 1px;
+        margin-bottom: 100px;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .about-question {
+        flex-wrap: nowrap;
+        gap: 39px;
+    }
+
+    .img-question {
+        width: 390px;
+        top: 4px;
+    }
+
+    .bg-question {
+        width: 331.94px;
+        height: 368.53px;
+        top: 83px;
+    }
+
+    .gradient-question {
+        width: 334px;
+        height: 487px;
+        left: 13px;
+        top: -54px;
+        z-index: -1;
+        transform: rotate(360deg);
+        margin-bottom: 100px;
+    }
+
+    .question-choose-title {
+        font-size: 28px;
+        line-height: 31px;
+    }
+
+    .dropdown {
+        padding: 0;
+        max-width: 371px;
+    }
+
+    .choose-question {
+        font-size: 15px;
+    }
+
+    .question-choose-info {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}
+
+@media (max-width: 425px) {
+    .img-question {
+        width: 392px;
+        left: -0.71px;
+        top: 20px;
+    }
+    .bg-question {
+        width: 325px;
+        height: 405px;
+        left: 1.69px;
+        top: 66.47px;
+    }
+    .question-image {
+        overflow-x: clip;
+    }
+    .gradient-question {
+        left: -129px;
+        top: -100px;
+    }
+
+    .question-choose-info {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .question-choose-title {
+        font-size: 32px;
+        margin-bottom: 32px;
+    }
+
+    .choose-question {
+        padding-top: 0;
+    }
+
+    .dropdown {
+        padding: 10px 0;
+    }
+    
+    .about-question {
+        margin-bottom: 100px;
+    }
+
+    
 }
 </style>

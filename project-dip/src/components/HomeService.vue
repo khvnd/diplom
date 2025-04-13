@@ -10,7 +10,7 @@
             </div>
         </div>
         <div class="grid-container">
-            <CardServise v-for="(service, index) in services" :key="index" :title="service.title" :description="service.description">
+            <CardServise v-for="(service, index) in services" :key="index" :title="service.title" :information="service.information" :service="service">
                 <template #icon>
                     <img :src="service.icon" alt="icon">
                 </template>
@@ -28,25 +28,34 @@ import CardServise from '@/components//CardServise.vue';
     components: {
         CardServise
       },
-     data() {
+      data() {
     return {
-      services: [
-        { title: "VR Development", description: "From concept to creation, our team of VR developers will bring your vision to life.", icon: "/img/service1.svg" },
-        { title: "VR Design", description: "Our talented VR designers will create immersive and engaging environments that will captivate your audience.", icon: "/img/service2.svg" },
-        { title: "VR Consulting", description: "Our VR consultants will work with you to ensure that your VR experience meets your goals and exceeds your expectations.", icon: "/img/service3.svg" },
-        { title: "VR Games", description: "We offer a wide selection of VR games that are suitable for players of all ages and skill levels.", icon: "/img/service4.svg" },
-        { title: "VR Events", description: "Make your next event unforgettable with our VR event services.", icon: "/img/service5.svg" },
-        { title: "VR Entertainment", description: "reate a VR escape room, or offer VR experiences at a theme park, we have the expertise and experience to make it happen.", icon: "/img/service6.svg" }
-      ]
+      services: [] // Храним загруженные данные
     };
+  },
+  mounted() {
+    fetch("/buttons.json") // Загружаем JSON из public
+      .then((response) => {
+        if (!response.ok) throw new Error("Failed to load data");
+        return response.json();
+      })
+      .then((data) => {
+        this.services = data.buttons.slice(0, 6); // Сохраняем загруженные данные
+      })
+      .catch((err) => {
+        console.error("Ошибка загрузки данных:", err);
+      });
   }
-   }
+};
+
+   
    </script>
 
    <style>
 
    .home-service-block {
     margin-bottom: 210px;
+    margin-top: 150px;
    }
 
    .home-service-info {
@@ -55,7 +64,7 @@ import CardServise from '@/components//CardServise.vue';
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    margin-top: 150px;
+    
     
    }
 
@@ -134,12 +143,34 @@ import CardServise from '@/components//CardServise.vue';
         .card:nth-child(3n+3) {
             transform: translateY(0); 
         }
+
+        .home-service-block {
+            margin-top: 100px;
+            margin-bottom: 100px;
+        }
+
+        
     }
 
     @media (max-width: 1024px) {
         .card:nth-child(3n+2),
         .card:nth-child(3n+3) {
             transform: translateY(0); 
+        }
+    }
+
+    @media (max-width: 425px) {
+        .home-service-block {
+            margin: 100px auto;
+        }
+
+        .home-service-info {
+            width: 398px;
+            height: 255px;
+        }
+
+        .home-service-title {
+            font-size: 32px;
         }
     }
     </style>

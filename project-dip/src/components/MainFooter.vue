@@ -1,15 +1,14 @@
 <template>
-    <div class="line-block">
-        <img src="/img/line.png" class="img-line">
+    
         <footer class="footer">
             <div class="footer-info">
                 <div class="footer-logo-section">
                     <img src="/img/logo.png" alt="">
                     <div class="footer-media">
-                        <img src="/img/tw.svg" alt="">
-                        <img src="/img/fc.svg" alt="">
-                        <img src="/img/in.svg" alt="">
-                        <img src="/img/git.svg" alt="">
+                        <button @click="goToExternalSite('https://twitter.com/')" class="btn-logo"><img src="/img/tw.svg" alt=""></button>
+                        <button @click="goToExternalSite('https://www.facebook.com/')" class="btn-logo"><img src="/img/fc.svg" alt=""></button> 
+                        <button @click="goToExternalSite('https://www.instagram.com/')" class="btn-logo"><img src="/img/in.svg" alt=""></button>
+                        <button @click="goToExternalSite('https://www.github.com/')" class="btn-logo"><img src="/img/git.svg" alt=""></button>
                     </div>
                 </div>
                 <div class="quicklinks">
@@ -18,15 +17,15 @@
                     <router-link class="a-links" to="/price">Pricing Plan</router-link>
                     <router-link class="a-links" to="/service">Service</router-link>
                     <router-link class="a-links" to="/blog">Blog</router-link>
-                    <router-link class="a-links" to="/">Our Team</router-link> 
+                    <router-link class="a-links" to="/team">Our Team</router-link> 
                 </div>
                 <div class="support">
                     <h3 class="info-title">Support</h3>
                     <router-link class="a-links" to="/about" >About us</router-link>
-                    <router-link class="a-links" to="/">Contact us</router-link>
-                    <router-link class="a-links" to="/">FAQ</router-link>
-                    <router-link class="a-links" to="/">Tems & Conditions</router-link>
-                    <router-link class="a-links" to="/">Privacy Policy</router-link> 
+                    <router-link class="a-links" to="/contact">Contact us</router-link>
+                    <router-link class="a-links" to="/faq">FAQ</router-link>
+                    <router-link class="a-links" to="/conditions">Tems & Conditions</router-link>
+                    <router-link class="a-links" to="/policy">Privacy Policy</router-link> 
                 </div>
                 <div class="help">
                     <h3 class="info-title">Need Help?</h3>
@@ -39,31 +38,22 @@
                 <p class="text-copy">© Copyright 2023, All Rights Reserved</p>
             </div>
         </footer>
-    </div>
+    
 </template>
 <script>
     export default {
      name: 'MainFooter',
-     
+     methods: {
+    goToExternalSite(url) {
+      window.open(url, "_blank");
+    }
+  }
    }
 </script>
 
 <style>
 
-    .line-block {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-    }
-
-    .img-line {
-        position: fixed;
-        width: 1011px;
-        height: 498px;
-        left: 3px;
-        z-index: -1;
-    }
-
+   
     .footer {
         height: 343px;
         display: flex;
@@ -89,6 +79,14 @@
         display: flex;
         flex-direction: row;
         gap: 20px;
+    }
+
+    .btn-logo {
+        border: none;
+        border-radius: 50%;
+        width: 46px;
+        height: 46px;
+        cursor: pointer;
     }
 
     .quicklinks {
@@ -133,11 +131,39 @@
         border-image-source: linear-gradient(-45deg, #0cbaf1, #e95ce9);
         border-image-slice: 1;
         margin-top: 32px;
+        padding-bottom: 15px;
     }
 
     .text-copy {
         color: rgb(255, 255, 255);
         font-size: 16px;
         font-weight: 300;
+    }
+
+    @media (max-width: 768px) {
+        .footer-logo-section {
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: 50px;
+        }
+    }
+
+    @media (max-width: 425px) {
+        .footer-logo-section {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 48px;
+        }
+
+        .footer-info {
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-content: center;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 64px;
+        }
     }
 </style>

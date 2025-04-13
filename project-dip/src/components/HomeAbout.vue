@@ -2,7 +2,7 @@
     <div class="about-article">
         <div class="about-article-img">
             <div class="bg"></div>
-            <img src="/img/image2.png" alt="" class="img2">
+            <img src="/img/image2.png" alt="" class="img-about-home">
             <div class="gradient-about"></div>
         </div>
         <div class="about-article-info">
@@ -24,8 +24,10 @@
                  Affordable and Accessible
             </li>
         </ul>
-
-        <button class="more">read more</button>
+        <router-link to="/about">
+            <button class="more">read more</button>
+        </router-link>
+        
         </div>
     </div>
 </template>
@@ -64,7 +66,7 @@
     }
 
 
-    .img2 {
+    .img-about-home {
         position: relative;
         left: 14.29px;
     }
@@ -118,6 +120,7 @@
         font-weight: 300;
         text-align: left;
         margin-bottom: 24px;
+        line-height: 28px;
     }
 
     .ul-home-about {
@@ -145,5 +148,82 @@
         font-weight: 700;
         text-align: center;
         text-transform: uppercase;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .more:hover {
+        box-shadow: 0 0 10px #3498db, 0 0 40px #3498db;
+    }
+
+    @media (max-width: 1024px) {
+        .about-article {
+            flex-wrap: nowrap;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .bg {
+            width: 308.94px;
+            height: 370.53px;
+            left: -0.31px;
+            top: 102.47px;
+        }
+
+        .img-about-home {
+            left: 2.29px;
+            width: 395px;
+        }
+
+        .gradient-about {
+            left: -43px;
+        }
+
+        .about-article {
+            align-items: center;
+            flex-wrap: nowrap;
+        }
+
+        .ab-art-title {
+            font-size: 34px;
+            line-height: 44px;
+        }
+
+        .ab-art-text {
+            line-height: 25px;
+        }
+    }
+
+    @media (max-width: 425px) {
+        .about-article {
+            margin: 100px auto;
+            gap: 48px;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .about-article-img {
+        width: 389px;
+        position: relative;
+        overflow-x: clip;
+        }
+        .bg {
+        width: 300px;
+        height: 373px;
+        top: 93.47px;
+        }
+        .img-about-home {
+        width: 389px;
+        height: 467px;
+        }
+        .gradient-about {
+            width: 435px;
+            left: -22px;
+            top: -91px;
+        }
+        .ab-art-title {
+            font-size: 32px;
+            line-height: 38px;
+        }
+
     }
     </style>

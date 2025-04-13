@@ -3,11 +3,14 @@
     <div class="title-content">
         <h1 class="title">Immerse Yourself in Virtual Reality</h1>
         <p class="text">Experience Unforgettable Events in VR. Bring your events to <br> life like never before with our VR services</p>
-        <button class="btn-more">discover more</button>
+        <router-link to="/detailservice">
+            <button class="btn-more">discover more</button>
+        </router-link>
+        
         <div class="happy"></div>
     </div>
     <div class="banner">
-        <img src="/img/Image1.png" alt="">
+        <img src="/img/Image1.png" class="img-content-home">
         <div class="gradient-banner"></div>
     </div>
     
@@ -71,6 +74,12 @@
     width: 205px;
     height: 50px;
     border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-more:hover {
+  box-shadow: 0 0 10px #3498db, 0 0 40px #3498db;
 }
 
 .happy {
@@ -99,5 +108,84 @@
     background-size: cover;
     transform: rotate(358deg);
     pointer-events: none;  
+}
+
+@media (max-width: 1024px) {
+    .home-content {
+        gap: 0;
+        flex-wrap: nowrap;
+    }
+
+    .gradient-banner {
+        width: 600px;
+        top: 59px;
+
+    }
+    
+}
+
+@media (max-width: 768px) {
+    .gradient-banner {
+    position: absolute;
+    width: 650px;
+    height: 466px;
+    left: -155px;
+    top: 16px;
+    background-size: auto;
+    transform: rotate(358deg);
+    pointer-events: none; 
+    z-index: -1; 
+    }
+
+    .home-content {
+        align-items: stretch;
+        flex-wrap: nowrap;
+        gap: 23px;
+    }
+
+    .title {
+        font-size: 40px;
+    }
+
+    .img-content-home {
+        width: 390px;
+    }
+
+    
+}
+
+@media (max-width: 425px) {
+
+    .home-content {
+        flex-wrap: wrap;
+    }
+
+    .title-content {
+    width: 398px;
+    }
+
+    .title {
+    font-size: 48px;
+    }
+    
+    .text {
+        font-size: 14px;
+    }
+
+    .img-content-home {
+        width: 354px;
+        height: 422px;
+        position: absolute;
+        left: 103px;
+    }
+
+    .gradient-banner {
+        top: -6px;
+        width: 697px;
+    }
+
+    .banner {
+        height: 422px;
+    }
 }
 </style>

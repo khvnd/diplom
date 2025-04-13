@@ -54,6 +54,7 @@
                 </ul>
                 <button class="free-trial">Get 14 Days Free Trial</button>
             </div>
+            <div class="price-plan-gradient"></div>
         </div>
     </div>
 </template>
@@ -76,12 +77,12 @@ export default {
     }
 
     .price-plan-info {
-        width: 751px;
+        max-width: 751px;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-        gap: 16px;
+        gap: 12px;
         padding-bottom: 40px;
     }
 
@@ -119,7 +120,7 @@ export default {
     }
 
     .price-item {
-        width: 359px;
+        max-width: 359px;
         height: 598px;
         border-radius: 6px;
         background: rgb(37, 37, 50);
@@ -189,10 +190,93 @@ export default {
         font-size: 14px;
         font-weight: 700;
         text-transform: uppercase;
-    }
+        cursor: pointer;
+    transition: 0.3s;
+}
+
+
 
     .free-trial:hover {
         background: linear-gradient(90.00deg, rgb(12, 186, 241), rgb(233, 92, 233) 100%);
         border: none;
+        box-shadow: 0 0 10px #3498db, 0 0 40px #3498db;
+    }
+
+    .price-plan-gradient {
+        display: block;
+    }
+
+    @media (max-width: 1024px) {
+        .price-plan-block {
+            flex-wrap: nowrap;
+            height: auto;
+            
+        }
+
+        .price-plan-content {
+            justify-content: center;
+            gap: 10px;
+            position: relative;
+            flex-wrap: nowrap;
+        }
+
+        .price-item {
+            max-width: 298px;
+            padding: 17px;
+        }
+
+        .free-trial {
+            width: 265px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .price-plan-block {
+            flex-wrap: nowrap;
+            height: auto;
+            margin-bottom: 100px;
+        }
+
+        .price-plan-content {
+            justify-content: center;
+            gap: 69px;
+            position: relative;
+            flex-wrap: wrap;
+        }
+
+        .price-plan-gradient {
+            width: 873px;
+        height: 618px;
+        position: absolute;
+        background: url(/public/img/light2.svg);
+        bottom: 6px;
+        background-size: cover;
+        left: -134px;
+        z-index: -1;
+        transform: rotate(360deg);
+        }
+    }
+
+    @media (max-width: 425px)  {
+
+        .price-info-title {
+            font-size: 32px;
+        }
+
+        .price-plan-block {
+            height: auto;
+            margin-bottom: 100px;
+
+        }
+
+        .price-plan-content {
+            flex-direction: column;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .price-plan-gradient {
+            display: none;
+        }
     }
 </style>

@@ -46,6 +46,7 @@
     justify-content: center;
     max-width: 325px;
     max-height: 262px;
+    line-height: 28px;
 }
 
 .item-img {
@@ -68,5 +69,34 @@
     font-weight: 400;
     text-align: left;
    
+}
+
+@media (max-width: 1024px) {
+    .info-item {
+        max-height: 282px;
+    }
+
+    .home-info {
+        flex-wrap: nowrap;
+        gap: 11px;
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .info-item {
+        max-width: 592px;
+        margin-bottom: 18px;
+    }
+
+    .home-info {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 425px) {
+    .info-item{
+    margin-bottom: 36px;
+    }
 }
     </style>

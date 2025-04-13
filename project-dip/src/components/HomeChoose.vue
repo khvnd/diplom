@@ -15,8 +15,8 @@
             </div>
         </div>
         <div class="home-choose-image">
-            <div class="bg"></div>
-            <img src="/img/image3.svg" class="img3">
+            <div class="bg-choose"></div>
+            <img src="/img/image3.svg" class="img-home-choose">
             <div class="gradient-about"></div>
         </div>
     </div>
@@ -117,7 +117,7 @@ const toggle = (index) => {
 
 .line {
 border-bottom: 1px solid rgba(255, 255, 255, 0.35);
-  margin-bottom: 10px; /* Отступ перед текстом */
+  margin-bottom: 10px; 
 }
 
 .content {
@@ -132,7 +132,7 @@ border-bottom: 1px solid rgba(255, 255, 255, 0.35);
     position: relative;
 }
 
-.bg {
+.bg-choose {
     position: absolute;
     width: 398.94px;
     height: 496.53px;
@@ -143,7 +143,7 @@ border-bottom: 1px solid rgba(255, 255, 255, 0.35);
  }
 
 
-.img3 {
+.img-home-choose {
     position: relative;
     left: 14.29px;
     top: -38px;
@@ -157,7 +157,129 @@ border-bottom: 1px solid rgba(255, 255, 255, 0.35);
     top: -24px;
     background: url(/public/img/Light1.svg) no-repeat center;
     background-size: cover;
-    transform: rotate(358deg);
+    transform: rotate(360deg);
     pointer-events: none;  
+}
+
+@media (max-width: 1024px) {
+    .home-choose {
+        flex-wrap: nowrap;
+        gap: 0;
+    }
+
+    .img-home-choose {
+        width: 500px;
+        top: -39px;
+    }
+
+    .bg-choose {
+        width: 373.94px;
+        height: 462.53px;
+        left: 87.69px;
+        top: 88.47px;
+    }
+    
+    .gradient-about {
+        width: 377px;
+        left: 86px;
+    }
+}
+
+@media (max-width: 768px) {
+    .home-choose-info {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .home-choose {
+        flex-wrap: nowrap;
+    }
+
+    .img-home-choose {
+        width: 390px;
+        left: 0.29px;
+        top: 5px;
+    }
+
+    .bg-choose {
+        width: 331.94px;
+        height: 368.53px;
+        left: 39.69px;
+        top: 91.47px;
+    }
+
+    .gradient-about {
+        width: 334px;
+        height: 487px;
+        left: 39px;
+        z-index: -1;
+        transform: rotate(360deg)
+    }
+
+    .home-choose-title {
+        font-size: 28px;
+        line-height: 31px;
+    }
+
+    .dropdown {
+        padding: 0;
+        max-width: 371px;
+    }
+
+    .choose-question {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 425px){
+    .home-choose {
+        margin: 100px auto;
+        flex-direction: column-reverse;
+        gap: 30px;
+        align-items: flex-start;
+    }
+
+    .img-home-choose {
+        width: 409px;
+        height: 491px;
+        left: -1px;
+        top: -30px;
+    }
+
+    .bg-choose {
+        width: 296px;
+        height: 369px;
+        left: 36px;
+        top: 85.47px;
+    }
+
+    .gradient-about {
+        width: 432px;
+        left: -22px;
+        top: -121px;
+    }
+
+    .home-choose-info {
+        padding: 0;
+        width: 398px;
+    }
+
+    .home-choose-title {
+        font-size: 32px;
+        line-height: 41px;
+        margin-bottom: 32px;
+    }
+
+    .home-choose-image {
+        overflow-x: clip;
+    }
+
+    .choose-question {
+        padding-top: 0;
+    }
+
+    .dropdown {
+        padding: 10px 0;
+    }
 }
 </style>

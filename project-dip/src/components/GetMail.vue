@@ -5,19 +5,33 @@
         </div>
         <div class="form">
             <img src="/img/mail.png" class="mail-img" alt="">
-            <input class="form-input" type="email" placeholder="Enter your email address" />
-            <button class="btn-send">
-        <img src="/img/send.png" alt="" class="send">
-      </button>
+            <input v-model="email" @keyup.enter="submitForm" class="form-input" type="email" placeholder="Enter your email address" />
+        
+                <button @click="submitForm" class="btn-send">
+                    <img src="/img/send.png" alt="" class="send">
+                </button>
+            
+          
         </div>
     </div>
 </template>
 
 <script>
     export default {
-     name: 'GetMail',
-     
-   }
+  data() {
+    return {
+      email: '',
+    };
+  },
+  methods: {
+    submitForm() {
+      if (this.email.trim()) {
+        
+        this.email = ''; 
+      }
+    },
+  },
+};
 </script>
 
 <style>
@@ -55,6 +69,9 @@
         height: 56px;
         border: none;
         padding-left: 48px;
+        outline: none;
+        
+       
     }
 
     .form-input::placeholder {
@@ -78,5 +95,21 @@
         position: absolute;
         left: 14px;
         top: 19px;
+    }
+
+    @media (max-width: 425px) {
+        .mail-block {
+            height: 198px;
+            flex-direction: column;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 92px;
+        }
+
+        .mail-title {
+            font-size: 28px;
+            line-height: 34px;
+            text-align: center;
+        }
     }
 </style>

@@ -105,7 +105,11 @@ onMounted(async () => {
     margin-top: 10px;
 }
 
+@media (max-width: 1024px) {
+  .articles-container {
+    max-width: 791.29px;
+  }
+}
 
 </style>
 
-  

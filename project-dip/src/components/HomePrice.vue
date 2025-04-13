@@ -20,12 +20,14 @@
           
         
           <div class="image-container">
-            <img src="/img/light1.svg" alt="" class="gradient">
             <img src="/img/priceman.png" alt="VR User" class="vr-user" />
             <div class="price-box">
               <span>Start from</span>
               <h2 class="price-text">$99</h2>
-              <button class="btn">GET STARTED</button>
+              <router-link to="/price">
+                <button class="btn">GET STARTED</button>
+              </router-link>
+              
               <p class="guarantee">30 Days Moneyback Guarantee</p>
             </div>
           </div>
@@ -140,18 +142,25 @@
       
       
   .btn {
+    width: 182px;
+    height: 50px;
     background: linear-gradient(90.00deg, rgb(12, 186, 241),rgb(233, 92, 233) 100%);
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 18px 38px;
     cursor: pointer;
     font-size: 14px;
     font-weight: 700;
     color: rgb(255, 255, 255);
     text-align: center;
     text-transform: uppercase;
-        
+    cursor: pointer;
+    transition: 0.3s;  
   }
+
+  .btn:hover {
+  box-shadow: 0 0 10px #3498db, 0 0 40px #3498db;
+}
 
   .price-text {
     color: rgb(255, 255, 255);
@@ -174,33 +183,8 @@
     padding-top: 14px;
   }
 
-  .gradient {
-    position: absolute;
-    width: 854px;
-    height: 898px;
-    top: -310px;
-    transform: rotate(23deg);
-    z-index: -1;
-    left: -13px;
-  }
+
       
-  @media (max-width: 768px) {
-    .pricing-section { 
-      grid-template-columns: 1fr;
-      text-align: center;
-    }
-      
-    .info-block {
-      flex-direction: column;
-      align-items: center;
-    }
-      
-    .price-box {
-      bottom: 5%;
-      right: 50%;
-      transform: translateX(50%);
-    }
-  }
 
 
 .home-price {
@@ -242,6 +226,89 @@
   background: rgba(37, 37, 50, 0.81);
   border: 1px solid rgba(255, 255, 255, 0.3)
   rgba(255, 255, 255, 0);
+}
+
+@media (max-width: 1024px) {
+  .price-box {
+    right: 20%;
+  }
+}
+
+@media (max-width: 768px) {
+  .info-text {
+    text-align: justify;
+  }
+
+  .image-container {
+      border-top: 1px solid rgba(90, 90, 90, 0.418);
+      border-left: none;
+      justify-content: flex-end;
+      padding-top: 37px;
+      background: url(/public/img/light2.svg);
+      background-size: cover;
+      background-position-x: center;
+    }
+
+  .vr-user {
+    max-width: 331px;
+  }
+
+  .price-box {
+    bottom: -29%;
+    right: 40%;
+
+  }
+
+  .pricing-section { 
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+      
+    .info-block {
+      flex-direction: column;
+      align-items: center;
+    }
+      
+   
+  }
+
+@media (max-width: 425px) {
+    .home-price {
+      margin: 150px auto;
+    }
+
+    .home-price-title {
+      font-size: 32px;
+    }
+
+    .info-text {
+      text-align: justify;
+    }
+
+    .image-container {
+      border-top: 1px solid rgba(90, 90, 90, 0.418);
+      border-left: none;
+      justify-content: flex-end;
+      padding-top: 37px;
+    }
+
+    .info {
+      padding: 40px;
+    }
+
+    .pricing-section {
+      padding: 0;
+    }
+
+    .vr-user {
+      max-width: 256px;
+    }
+
+    .price-box {
+      bottom: -27%;
+      right: 12%;
+    }
+
 }
 
 </style>

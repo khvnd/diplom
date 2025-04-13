@@ -34,8 +34,39 @@ export default {
     position: absolute;
     top: -221px;
     left: 307px;
-    transform: rotate(8deg);
+    transform: rotate(360deg);
     width: 544px;
     z-index: -1;
+ }
+
+ @media (max-width: 1024px) {
+   .service-banner-gradient {
+      top: -251px;
+      left: 186px;
+   }
+ }
+
+ @media (max-width: 768px) {
+   .service-banner-gradient {
+      top: -263px;
+      left: 63px;
+      width: 585px;
+   }
+ } 
+
+ @media (max-width: 425px) {
+   .service-banner-title {
+      font-size: 40px;
+   }
+
+   .service-banner-gradient {
+      top: -197px;
+      left: -22px;
+      width: 423px;
+   }
+
+   .service-banner {
+      margin-bottom: 100px;
+   }
  }
 </style>

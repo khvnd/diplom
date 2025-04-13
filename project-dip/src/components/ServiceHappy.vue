@@ -54,4 +54,17 @@
         font-size: 48px;
         font-weight: 600;
     }
+
+    @media (max-width: 425px) {
+        .number-title {
+            font-size: 32px;
+        }
+
+        .number-block {
+            flex-direction: column;;
+            margin-bottom: 100px;
+            align-items: center;
+            gap: 36px;
+        }
+    }
 </style>

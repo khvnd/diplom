@@ -1,0 +1,19 @@
+<svg width="1038.000000" height="692.000000" viewBox="0 0 1038 692" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<filter id="filter_77_3421_dd" x="0.000000" y="0.000000" width="1038.000000" height="692.000000" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+			<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+			<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+			<feGaussianBlur stdDeviation="70" result="effect_layerBlur_1"/>
+		</filter>
+		<linearGradient x1="243.944748" y1="482.000000" x2="803.539490" y2="237.493347" id="paint_linear_77_3421_0" gradientUnits="userSpaceOnUse">
+			<stop stop-color="#1CC4F9"/>
+			<stop offset="1.000000" stop-color="#FE69FE"/>
+		</linearGradient>
+	</defs>
+	<g filter="url(#filter_77_3421_dd)">
+		<path id="Ellipse 37" d="M565.08 239.47C717.08 239.47 828 164.97 828 252.85C828 340.73 429.55 482 277.55 482C125.55 482 277.55 340.73 277.55 252.85C277.55 164.97 413.08 239.47 565.08 239.47Z" fill="url(#paint_linear_77_3421_0)" fill-opacity="0.800000" fill-rule="nonzero"/>
+	</g>
+</svg>

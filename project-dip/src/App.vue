@@ -36,4 +36,28 @@ body {
     margin: 0 auto;
 }
 
+@media (max-width: 1024px) {
+  body {
+    margin: 0 50px;
+   
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    margin: 0 20px;
+   
+  }
+}
+
+@media (max-width: 425px) {
+  body {
+    margin: 0 16px;
+   
+  }
+}
+
+
+
+
 </style>

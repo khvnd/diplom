@@ -2,16 +2,15 @@
     <div class="articles-container">
       <h2 class="scroll-subtitle">Recent Article</h2>
       <div class="articles-list">
-        <div v-for="article in articles" :key="article.id" class="article-item">
+        <router-link v-for="article in articles" :key="article.id" :to="`/article/${article.id}`" class="article-item">
           <img :src="article.img" alt="Article Image" class="article-image" />
           <div class="article-info">
             <span class="category">{{ article.category }}</span>
             <h3 class="scroll-title">{{ article.title }}</h3>
           </div>
-          <button class="next-btn">
-            <span>&#10132;</span>
-          </button>
-        </div>
+          
+          
+        </router-link>
       </div>
     </div>
   </template>
@@ -80,7 +79,7 @@ onMounted(async () => {
     gap: 21px;
     height: 100%;
     padding-left: 97px;
-
+    cursor: pointer;
 }
 
 .article-image {
@@ -124,6 +123,92 @@ onMounted(async () => {
 .next-btn span {
   font-size: 18px;
   color: white;
+}
+
+@media (max-width: 1024px) {
+  .articles-container {
+    width: 923px;
+    position: static;
+    margin-top: 67px;
+  }
+
+  .article-item {
+    padding: 20px;
+    padding-left: auto;
+    gap: 0;
+    justify-content: space-around;
+  }
+
+  .scroll-subtitle {
+    padding-left: 10px;
+    padding-top: 10px;
+    text-align: center;
+  }
+
+  .article-info {
+    max-width: 412px;
+
+  }
+
+  .article-image {
+    width: 198px;
+    height: 124px;
+  }
+}
+
+@media (max-width: 768px) {
+  .articles-container {
+    width: 727px;
+    position: static;
+    margin-top: 67px;
+  }
+
+  .article-item {
+    padding: 20px;
+    padding-left: auto;
+    gap: 0;
+    justify-content: space-around;
+  }
+
+  .scroll-subtitle {
+    padding-left: 10px;
+    padding-top: 10px;
+    text-align: center;
+  }
+
+  .article-info {
+    max-width: 412px;
+
+  }
+
+  .article-image {
+    width: 198px;
+    height: 124px;
+  }
+}
+
+@media (max-width: 425px) {
+  .articles-container {
+    width: 398px;
+    position: static;
+    margin-top: 67px;
+  }
+
+  .article-item {
+    padding: 10px;
+    padding-left: auto;
+    gap: 0;
+   
+  }
+
+  .scroll-title {
+    font-size: 16px;   
+  }
+
+  .scroll-subtitle {
+    padding-left: 10px;
+    padding-top: 10px;
+  }
 }
 </style>
 

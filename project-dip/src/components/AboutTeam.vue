@@ -151,6 +151,74 @@
     font-weight: 700;
     color: rgb(255, 255, 255);
     text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-see-all:hover {
+  box-shadow: 0 0 10px #3498db, 0 0 40px #3498db;
+}
+
+@media (max-width: 1024px) {
+  .team-container {
+    gap: 94px;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .team-card {
+    width: 413px;
+    height: 522px;
+  }
+
+  .ab-background {
+    width: 373px;
+    height: 488px;
+  }
+}
+
+@media (max-width: 768px) {
+  .team-container {
+    gap: 26px;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .team-card {
+    width: 350px;
+    height: 476px;
+  }
+
+  .ab-background {
+    width: 326px;
+    height: 451px;
+  }
+}
+
+@media (max-width: 425px) {
+    .team-container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .team-title {
+      font-size: 32px;
+    }
+
+    .info-content {
+      text-align: center;
+    }
+
+    .about-team-info {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .about-team {
+      margin-bottom: 100px;
+    }
 }
   </style>
   

@@ -8,9 +8,9 @@
             From initial consultation to final delivery, we are committed to providing exceptional customer service. Our goal is to ensure that you are completely satisfied with every aspect of your VR experience.</p>
         </div>
         <div class="about-img">
-            <div class="bg"></div>
-            <img src="/img/priceman.png" alt="" class="img2">
-            <div class="gradient-about"></div>
+            <div class="bg-content"></div>
+            <img src="/img/priceman.png" alt="" class="img-about-content">
+            <div class="gradient-about-content"></div>
         </div>
     </div>
 </template>
@@ -73,7 +73,7 @@
     position: relative;
 }
 
-.bg {
+.bg-content {
     position: absolute;
     width: 398.94px;
     height: 496.53px;
@@ -84,12 +84,12 @@
 }
 
 
-.img2 {
+.img-about-content {
     position: relative;
      left: 14.29px;
 }
 
-.gradient-about {
+.gradient-about-content {
     position: absolute;
     width: 404px;
     height: 570px;
@@ -97,7 +97,108 @@
     top: -24px;
     background: url(/public/img/Light1.svg) no-repeat center;
     background-size: cover;
-    transform: rotate(358deg);
+    transform: rotate(360deg);
     pointer-events: none;
+}
+
+@media (max-width: 1024px) {
+    .about-content {
+    flex-wrap: nowrap;
+ }
+
+ .about-info {
+    max-width: 452px;
+ }
+
+ .about-title {
+    font-size: 39px;
+    line-height: 45px;
+ }
+
+ .img-about-content {
+    left: 1.29px;
+ }
+
+ .bg-content {
+    width: 361.94px;
+    height: 470.53px;
+    left: -0.31px;
+    top: 48.47px;
+ }
+
+ .gradient-about-content {
+    width: 365px;
+    left: -2px;
+ }
+} 
+
+@media (max-width: 768px) {
+ .about-content {
+    flex-wrap: nowrap;
+ }
+
+ .about-info {
+    max-width: 343px;
+    gap: 5px;
+ }
+
+ .about-title {
+    font-size: 32px;
+    line-height: 39px;
+ }
+
+ .about-text {
+    font-size: 14px;
+    line-height: 24px;
+ }
+
+ .img-about-content {
+    left: -1.71px;
+    width: 344px;
+ }
+
+ .bg-content {
+    width: 343.94px;
+    height: 448.53px;
+    left: -2.31px;
+    top: 48.47px;
+ }
+
+ .gradient-about-content {
+    width: 346px;
+    left: -3px;
+ }
+}
+
+@media (max-width: 425px) {
+    .about-title {
+        font-size: 32px;
+        line-height: 42px;
+    }
+
+    .img-about-content {
+        width: 314.86px;
+        left: 27.29px;
+    }
+
+    .bg-content {
+        width: 315.6px;
+        height: 388.81px;
+        left: 36.69px;
+        top: 66.47px;
+    }
+
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+        margin-bottom: 100px;
+    }
+
+    .gradient-about-content {
+        width: 425px;
+        left: -72px;
+    }
 }
 </style>

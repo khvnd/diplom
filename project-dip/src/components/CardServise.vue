@@ -4,8 +4,8 @@
         <slot name="icon"></slot>
       </div>
       <h3 class="card-subtitle">{{ title }}</h3>
-      <p class="card-text">{{ description }}</p>
-      <router-link  to="/detailservice">
+      <p class="card-text">{{ information }}</p>
+      <router-link  :to="{ name: 'detailservice', params: { id: service.id } }">
         <button class="learn-more">Learn More</button>
       </router-link>
       
@@ -16,7 +16,8 @@
   export default {
     props: {
       title: String,
-      description: String
+      information: String,
+      service: Object
     }
   };
   </script>
@@ -74,5 +75,17 @@
   bottom: 20px; 
   opacity: 1;
 }
+
+@media (max-width: 768px) {
+  .card {
+    height: 239px;
+  }
+
+  .card-subtitle {
+    margin-top: 35px;
+  }
+}
+
+
   </style>
   

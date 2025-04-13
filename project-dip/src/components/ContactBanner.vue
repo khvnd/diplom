@@ -1,18 +1,18 @@
 <template>
-    <div class="blog-banner">
-        <h3 class="blog-banner-title">Blog</h3>
-        <img src="/img/light1.svg" class="blog-banner-gradient">
+    <div class="contact-banner">
+        <h3 class="contact-banner-title">Contact Us</h3>
+        <img src="/img/light1.svg" class="contact-banner-gradient">
     </div>
 </template>
 
 <script>
 export default {
-     name: 'BlogBanner',
+     name: 'ContactBanner',
    }
 </script>
 
 <style>
- .blog-banner {
+ .contact-banner {
     height: 216px;
     border-bottom: 1px solid;
     border-image-source: linear-gradient(-45deg, #0cbaf1, #e95ce9);
@@ -22,7 +22,7 @@ export default {
     position: relative;
  }
 
- .blog-banner-title {
+ .contact-banner-title {
     color: rgb(255, 255, 255);
     font-size: 64px;
     font-weight: 600;
@@ -30,7 +30,7 @@ export default {
     
  }
 
- .blog-banner-gradient {
+ .contact-banner-gradient {
     position: absolute;
     top: -221px;
     left: 307px;
@@ -40,32 +40,32 @@ export default {
  }
 
  @media (max-width: 1024px) {
-   .blog-banner-gradient {
+   .contact-banner-gradient {
       top: -251px;
       left: 186px;
    }
  }
 
  @media (max-width: 768px) {
-   .blog-banner-gradient {
+   .contact-banner-gradient {
       top: -263px;
       left: 63px;
       width: 585px;
    }
  } 
- 
+
  @media (max-width: 425px) {
-   .blog-banner-title {
+   .contact-banner-title {
       font-size: 40px;
    }
 
-   .blog-banner-gradient {
+   .contact-banner-gradient {
       top: -197px;
       left: -22px;
       width: 423px;
    }
 
-   .blog-banner {
+   .contact-banner {
       margin-bottom: 100px;
    }
  }

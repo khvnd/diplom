@@ -104,7 +104,7 @@ import { ref, onMounted, computed } from "vue";
     }
 
     .article-image {
-        width: 789px;
+        width: 100%;
         height: 528px;
         
     }
@@ -114,6 +114,34 @@ import { ref, onMounted, computed } from "vue";
         font-size: 16px;
         font-weight: 300;
         text-align: justify;
+    }
+
+    @media (max-width: 1024px) {
+      .detail-block {
+        flex-direction: column;
+        align-content: center;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .detail-block {
+        flex-direction: column;
+        align-content: center;
+      }
+
+      .blog-detail {
+        max-width: 728px;
+      }
+
+      .article-image {
+        height: 100%;
+      }
+    }
+
+    @media (max-width: 425px) {
+      .detail-title {
+        font-size: 32px;
+      }
     }
 </style>
   

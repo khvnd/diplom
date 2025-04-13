@@ -9,16 +9,19 @@
       :loop="true"
       class="custom-swiper"
     >
-      <swiper-slide v-for="slide in slides" :key="slide.id">
+      <swiper-slide class="my-swiper" v-for="slide in slides" :key="slide.id">
         <div class="slide-content">
           <img :src="slide.img" alt="VR Image" class="slide-image" />
           <div class="slide-overlay">
             <span class="category">{{ slide.category }}</span>
             
             <h2 class="slide-title">{{ slide.title }}</h2>
-            <button class="next-btn">
+            <router-link  :to="`/article/${slide.id}`">
+              <button class="next-btn">
               <span>&#10132;</span>
             </button>
+            </router-link>
+            
         
           </div>
         </div>
@@ -51,7 +54,7 @@ onMounted(async () => {
 });
 </script>
 
-<style scoped>
+<style >
 
 .popular {
     max-width: 636px;
@@ -136,5 +139,60 @@ onMounted(async () => {
 .next-btn span {
   font-size: 20px;
   color: white;
+}
+
+@media (max-width: 1024px) {
+  .popular {
+    max-width: 923px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .custom-swiper {
+    max-width: 923px;
+  }
+}
+
+@media (max-width: 768px) {
+  .popular {
+    max-width: 727px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .custom-swiper {
+    max-width: 727px;
+  }
+}
+
+@media (max-width: 425px) {
+  .slide-gradient {
+    width: 600px;
+    z-index: -1;
+  }
+
+  .slide-content {
+    width: 398px;
+  }
+
+  .my-swiper {
+    --swiper-theme-color: #41424336;
+  }
+
+  .custom-swiper .swiper-button-next, .swiper-button-prev {
+    --swiper-navigation-size: 16px;
+  }
+
+  .slide-title {
+    font-size: 20px;
+    width: 264px;
+  }
+
+  .popular {
+    margin-top: 40px;
+    min-height: 0;
+  }
 }
 </style>

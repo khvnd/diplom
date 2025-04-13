@@ -1,7 +1,10 @@
 {
     "buttons": [
         {
+        "id": 1,
         "title": "VR Development", 
+        "information": "From concept to creation, our team of VR developers will bring your vision to life.",
+        "icon": "/img/service1.svg",
         "description": "VR development is the foundation of all virtual experiences, enabling businesses to create simulations, training programs, entertainment applications, and more. Our team specializes in building high-quality VR applications tailored to various industries, from education and healthcare to real estate and retail.We take concepts from idea to execution, designing interactive VR experiences that engage users and provide real-world value. Whether you're looking to develop a VR training module for employees or a virtual showroom for customers, we craft solutions that meet your needs.",
         "secondDes": "Our development process includes designing immersive environments, integrating real-time interactions, and optimizing applications for various VR platforms. We use the latest technology to ensure smooth performance, realistic visuals, and intuitive controls.By combining creativity with technical expertise, we help businesses and individuals bring their VR visions to life, providing impactful, high-quality experiences.",
         "list": ["Custom VR application and software development",
@@ -13,7 +16,10 @@
             ]       
         },
         { 
+        "id": 2,
         "title": "VR Games", 
+        "information": "Our talented VR designers will create immersive and engaging environments that will captivate your audience.",
+        "icon": "/img/service2.svg",
         "description": "Virtual reality gaming has revolutionized the industry, offering unparalleled levels of immersion, realism, and interactivity. Unlike traditional games, VR games allow players to step directly into the digital world, making every movement, action, and interaction feel incredibly lifelike.Our VR game development service focuses on creating engaging, high-performance gaming experiences across multiple platforms. Whether it's action-packed shooters, puzzle-based adventures, or multiplayer VR experiences, we bring unique game concepts to life.",
         "secondDes": "With expertise in game design, mechanics, and storytelling, we ensure that every VR game provides a seamless and thrilling experience. Our team specializes in integrating realistic physics, haptic feedback, and dynamic AI to enhance gameplay.From conceptualization to final production, we handle every stage of VR game development, ensuring that each project delivers cutting-edge graphics, smooth performance, and unforgettable gameplay.",
         "list": ["Full-scale VR game development and design",
@@ -25,7 +31,10 @@
             ]      
         },
         {
-        "title": "VR Events", 
+        "id": 3,
+        "title": "VR Events",
+        "information": "Our VR consultants will work with you to ensure that your VR experience meets your goals and exceeds your expectations.", 
+        "icon": "/img/service3.svg",
         "description": "Hosting a virtual event is no longer just an alternative—it’s a cutting-edge way to connect with audiences globally. Our VR Events service specializes in creating fully immersive virtual gatherings, from conferences and trade shows to live performances and interactive networking experiences.With VR technology, attendees can explore event spaces, interact with exhibitors, and participate in live discussions as if they were physically present. We create customized virtual venues that offer seamless navigation, realistic engagement, and enhanced networking opportunities.",
         "secondDes": "Our team ensures that each VR event is engaging, visually impressive, and technically flawless. Whether you want to launch a new product, organize an educational seminar, or host a large-scale entertainment event, we bring your vision to life.By merging innovation with practical event planning, we help businesses reach wider audiences while providing unforgettable, interactive experiences.",
         "list": ["Custom VR venue design and development",
@@ -37,7 +46,10 @@
             ]      
         },
         { 
-        "title": "VR Design", 
+        "id": 4,
+        "title": "VR Design",
+        "information": "We offer a wide selection of VR games that are suitable for players of all ages and skill levels.", 
+        "icon": "/img/service4.svg",
         "description": "At our VR design service, we specialize in creating immersive and engaging virtual reality experiences that transport your audience to a whole new world. Our team of experienced designers and developers work together to create VR experiences that are not only visually stunning but also interactive and user-friendly. We take a collaborative approach to our VR design process, working closely with you to understand your specific needs and goals. Whether you're looking to create a VR training program, a marketing campaign, or a game, we can help you bring your idealife.",
         "secondDes": "We use the latest VR technologies and software to create immersive experiences that are fully customized to your brand and message. We understand that every project is unique, and we work closely with you to ensure that we create a VR experience that perfectly matches your vision.At our VR design service, we are committed to delivering high-quality VR experiences that engage, educate, and inspire your audience. Contact us today to discuss how we can help bring your ideas to life with our VR design services.",
         "list": ["Concept development and ideation",
@@ -49,7 +61,10 @@
             ]      
         },
         { 
-        "title": "VR Consulting", 
+        "id": 5,
+        "title": "VR Consulting",
+        "icon": "/img/service5.svg",
+        "information": "Make your next event unforgettable with our VR event services.", 
         "description": "Navigating the world of VR can be challenging, which is why our VR consulting service is designed to help businesses implement the best VR solutions for their needs. We guide companies through every step, from planning to deployment, ensuring a seamless integration of virtual reality into their operations.Our expert consultants work closely with organizations to assess their goals, identify the most suitable VR applications, and develop tailored strategies. Whether it's training employees, improving customer engagement, or creating immersive marketing experiences, we help businesses unlock VR's full potential.",
         "secondDes": "We provide hands-on workshops, industry research, and technical support to help companies stay ahead in the ever-evolving VR landscape. Our mission is to make VR accessible, practical, and beneficial for businesses of all sizes.If you're looking to explore VR but aren’t sure where to start, our consulting service ensures you get the best solutions customized to your specific objectives.",
         "list": ["VR strategy development for businesses",
@@ -61,7 +76,10 @@
             ]    
         },
         { 
-        "title": "VR Entertainment", 
+        "id": 6,
+        "title": "VR Entertainment",
+        "icon": "/img/service6.svg",
+        "information": "Reate a VR escape room, or offer VR experiences at a theme park, we have the expertise and experience to make it happen.", 
         "description": "Virtual reality entertainment has transformed how people experience media, allowing users to step into immersive, interactive digital worlds. Whether it's virtual concerts, 360-degree movies, or fully immersive theme parks, VR entertainment offers new ways to engage audiences like never before.With cutting-edge VR technology, users can become active participants in entertainment rather than passive viewers. They can explore cinematic landscapes, attend live performances in a digital space, or interact with dynamic virtual environments. VR entertainment pushes creative boundaries, bringing unique, unforgettable experiences to life.",
         "secondDes": "From developing interactive storytelling experiences to designing fully immersive amusement rides, we provide complete solutions for VR entertainment. Our team specializes in crafting breathtaking visuals, realistic soundscapes, and intuitive interaction systems that captivate users.Whether you're a filmmaker, game developer, or event organizer, we can help you create an extraordinary VR entertainment experience that captivates and inspires.",
         "list": ["Development of VR concerts and live shows",
@@ -72,7 +90,8 @@
                 "Augmented and mixed reality integrations"
             ]     
         },
-        { 
+        {
+        "id": 7,
         "title": "Client Testimony", 
         "description": "At our Client Testimony service, we highlight real stories from individuals and businesses that have successfully integrated VR into their operations. Through compelling testimonials, we demonstrate the power of VR in transforming industries, enhancing training programs, and creating immersive customer experiences. Our goal is to showcase the impact of VR through authentic user experiences, emphasizing its effectiveness in business growth and engagement.We collect detailed feedback from clients, providing firsthand accounts of how VR has helped them achieve their goals. Whether it's a company improving employee training or a brand using VR for marketing, our testimonials serve as powerful proof of VR’s capabilities.",
         "secondDes": "By curating high-quality video testimonials, case studies, and success stories, we help businesses build trust with potential customers. These real-world experiences show how VR enhances productivity, engagement, and interactivity.If you're looking to leverage VR for your business, our Client Testimony service ensures you have credible, real-life examples to inspire your audience.",

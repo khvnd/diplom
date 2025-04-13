@@ -1,11 +1,11 @@
 <template>
-  <div class="line-section">
+  
  <header>
     <img src="/img/logo.png" alt="logo" class="logo">
 
 
     <!-- Бургер-кнопка -->
-    <input type="checkbox" id="burger-toggle" class="burger-toggle" />
+    <input type="checkbox" id="burger-toggle" class="burger-toggle" v-model="isMenuOpen" />
     <label for="burger-toggle" class="burger-button">☰</label>
 
     <div class="menu">
@@ -15,25 +15,50 @@
       <router-link  to="/price" class="a-menu">Price</router-link>
       <router-link  to="/blog" class="a-menu">Blog</router-link>  
     </div>
-    <a href="#" class="a-bord">Contact us</a>
+    <router-link class="a-bord" to="/contact" >Contact us</router-link>
 
     <!-- Мобильное меню -->
     <div class="mobile-menu">
-      <router-link class="a-menu" to="/">Home</router-link>
-      <router-link class="a-menu" to="/about">About us</router-link>
-      <router-link class="a-menu" to="/service">Service</router-link>
-      <router-link class="a-menu" to="/price">Price</router-link>
-      <router-link  to="/blog" class="a-menu">Blog</router-link> 
-      <a href="#" class="a-bord">Contact us</a>
+        <router-link 
+            v-for="link in links" 
+            :key="link.path" 
+            :to="link.path" 
+            class="a-menu"
+            @click="closeMenu"
+        >
+            {{ link.title }}
+        </router-link>
     </div>
 </header>
-<div class="line-img"></div>
-</div>
+
+
 </template>
 
 <script>
-export default {
-  name: 'MainHeader',
+ export default {
+    data() {
+        return {
+            isMenuOpen: false,
+            links: [
+                { path: '/', title: 'Home' },
+                { path: '/about', title: 'About us' },
+                { path: '/service', title: 'Service' },
+                { path: '/price', title: 'Price' },
+                { path: '/blog', title: 'Blog' },
+                { path: '/contact', title: 'Contact us' }
+            ]
+        }
+    },
+    methods: {
+        closeMenu() {
+            this.isMenuOpen = false;
+        }
+    },
+    watch: {
+        '$route'() {
+            this.closeMenu();
+        }
+    }
 }
 </script>
 
@@ -84,10 +109,15 @@ header img{
   color: white;
   position: absolute;
   right: 20px;
-  top: 20px;
+  top: 40px;
   z-index: 20;
 }
 
+.burger-toggle:checked ~ .burger-button {
+    right: 0px; 
+    top: 15px;
+    transform: rotate(90deg)
+}
 /* Скрытый чекбокс */
 .burger-toggle {
   display: none;
@@ -129,15 +159,8 @@ header img{
   }
 }
 
-.line-img {
-  background-image: url(/public/img/lineheader.png);
-  background-repeat: no-repeat;
-  width: 1200px;
-    height: 381.2px;
-    position: fixed;
-    top: 1px;
-    right: -465px;
-    z-index: -1;
-}
+
+
+
 
 </style>

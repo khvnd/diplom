@@ -7,6 +7,11 @@ import PricePage from '@/pages/PricePage.vue'
 import BlogPage from '@/pages/BlogPage.vue'
 import BlogDetail from '@/pages/BlogDetail.vue'
 import OurTeam from '@/pages/OurTeam.vue'
+import ContactPage from '@/pages/ContactPage.vue'
+import FAQ from '@/pages/FAQ.vue'
+import ConditionsPage from '@/pages/ConditionsPage.vue'
+import PrivacyPolicy from '@/pages/PrivacyPolicy.vue'
+import NotFound from '@/pages/NotFound.vue'
 
 const routes = [
   {
@@ -25,9 +30,10 @@ const routes = [
     component: ServicePage
   },
   {
-    path: '/detailservice',
+    path: '/detailservice/:id',
     name: 'detailservice',
-    component: DetailService
+    component: DetailService,
+    props: true
   },
   {
     path: '/price',
@@ -47,12 +53,39 @@ const routes = [
     path: '/team',
     name: 'team',
     component: OurTeam
+  },
+  {
+    path: '/contact',
+    name: 'contact',
+    component: ContactPage
+  },
+  {
+    path: '/faq',
+    name: 'faq',
+    component: FAQ
+  },
+  {
+    path: '/conditions',
+    name: 'conditions',
+    component: ConditionsPage
+  },
+  {
+    path: '/policy',
+    name: 'policy',
+    component: PrivacyPolicy
+  },
+  {
+    path: "/:pathMatch(.*)*", 
+    component: NotFound
   }
 ]
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes
+  routes,
+  scrollBehavior() {
+    return { top: 0 } // или { top: 0, behavior: 'smooth' }
+  }
 })
 
 export default router

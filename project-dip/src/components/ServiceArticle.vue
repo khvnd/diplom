@@ -1,6 +1,6 @@
 <template>
   <div class="circle-container">
-    <!-- Фоновые круги -->
+
     <div class="circle circle1"></div>
     <div class="circle circle2"></div>
     <div class="circle circle3"></div>
@@ -8,20 +8,20 @@
     <div class="circle circle5"></div>
     <div class="circle circle6"></div>
 
-    <!-- Если данные загружаются -->
+
     <div v-if="loading" class="center-content">
       <h2>Loading...</h2>
     </div>
 
-    <!-- Если ошибка загрузки -->
+
     <div v-else-if="error" class="center-content">
       <h2>Error: {{ error }}</h2>
     </div>
 
     
-    <!-- Если данные загружены -->
+    
     <template v-else>
-      <!-- Центральный текст -->
+      
       <div class="center-content">
           <h3 class="center-subtitle">SERVICE</h3>
         <h2 class="center-title">{{ activeButton.title }}</h2>
@@ -40,141 +40,144 @@
         <button class="cont-us">Contact us</button>
       </div>
 
-      <!-- Кнопки по кругу -->
       
       <div 
         v-for="(button, index) in buttons" 
         :key="index" 
         class="circle-button" 
         :class="{ active: activeButton === button }"
-        :style="getButtonStyle(index)" 
+        :style="getButtonsStyle(index)" 
         @click="setActive(button)"
       >
         {{ button.title }}
       </div>
       <div class="circle-navigation">
-  <button @click="prevButton" class="arrow left-arrow">←</button>
-  <button @click="nextButton" class="arrow right-arrow">→</button>
-</div>
-
-      
+        <button @click="prevButton" class="arrow left-arrow">←</button>
+        <button @click="nextButton" class="arrow right-arrow">→</button>
+      </div>
     </template>
   </div>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      buttons: [],
-      servicesList: [],
-      activeButton: null,
-      loading: true,
-      error: null
-    };
-  },
-  mounted() {
-    fetch("/buttons.json") // Загружаем JSON из public
-      .then((response) => {
-        if (!response.ok) throw new Error("Failed to load data");
-        return response.json();
-      })
-      .then((data) => {
-        this.buttons = data.buttons;
-        this.activeButton = this.buttons[3]; // Первая кнопка активна по умолчанию
-        this.updateServicesList(); // Обновляем servicesList
-        this.loading = false;
-       
-      })
-      .catch((err) => {
-        this.error = err.message;
-        this.loading = false;
-      });
-  },
-  computed: {
-  isMobile() {
-    return window.innerWidth <= 768;
-  }
-},
-
-  methods: {
-    updateServicesList() {
-    if (this.activeButton && this.activeButton.list) {
-      this.servicesList = this.activeButton.list;
-    } else {
-      this.servicesList = [];
-    }
-  },
-  getButtonStyle(index) {
-  const isMobile = window.innerWidth <= 768;
-  const activeIndex = this.buttons.indexOf(this.activeButton);
-  const topButtonIndex = 3; // Верхняя кнопка (третья по счёту)
-
-  if (isMobile) {
-    if (index === activeIndex) {
-      // Активная кнопка встаёт на место третьей
-      const topButton = document.querySelectorAll('.circle-button')[topButtonIndex];
-      if (topButton) {
-        const { top, left } = topButton.getBoundingClientRect();
+    props: ['id'], 
+    data() {
         return {
-          position: 'absolute',
-          top: `${top}px`,
-          left: `${left}px`,
-          transform: 'translate(-50%, -50%)',
-          zIndex: 10
+            buttons: [], 
+            servicesList: [], 
+            activeButton: null, 
+            loading: true, 
+            error: null
         };
-      }
+    },
+    mounted() {
+        this.loading = true;
+
+        fetch("/buttons.json")
+        .then((response) => {
+            if (!response.ok) throw new Error("Failed to load data");
+            return response.json();
+        })
+        .then((data) => {
+            this.buttons = data.buttons;
+            const foundButton = this.buttons.find((btn) => btn.id === Number(this.$route.params.id));
+            this.activeButton = foundButton || this.buttons[3]; // По умолчанию первая кнопка
+            this.updateServiceList();
+            this.loading = false;
+        })
+        .catch((err) => {
+            this.error = err.message;
+            this.loading = false;
+        });
+    },
+    computed: {
+        isMobile() {
+            return window.innerWidth <= 425;
+        },
+        isTablet() {
+            return window.innerWidth >=768;
+        },
+        isDesktop() {
+            return window.innerWidth >= 1024; 
+        }
+    },
+    methods: {
+        updateServiceList() {
+            if (this.activeButton && this.activeButton.list) {
+                this.servicesList = this.activeButton.list;
+            } else {
+                this.servicesList = [];
+            }
+        },
+        getButtonsStyle(index) {
+        
+        const activeIndex = this.buttons.indexOf(this.activeButton);
+
+        if (this.isMobile) {
+            if (index === activeIndex) {
+                return {
+                    position: 'absolute',
+                    top: '226px',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    
+                };
+            }
+            return { display: 'none' };
+        }
+        
+         else {
+            
+            const total = this.buttons.length;
+            const startAngle = -180;
+            const endAngle = 0;
+            const angle = startAngle + ((endAngle - startAngle) / (total - 1)) * index;
+            const radius = 470;
+
+            const x = Math.cos((angle * Math.PI) / 180) * radius;
+            const y = Math.sin((angle * Math.PI) / 180) * radius;
+
+            return { transform: `translate(${x}px, ${y}px)` };
+        }
+    },
+        prevButton() {
+            const currentIndex = this.buttons.indexOf(this.activeButton);
+            const prevIndex = (currentIndex - 1 + this.buttons.length) % this.buttons.length;
+            this.setActive(this.buttons[prevIndex]);
+        },
+        nextButton() {
+            const currentIndex = this.buttons.indexOf(this.activeButton);
+            const nextIndex = (currentIndex + 1) % this.buttons.length;
+            this.setActive(this.buttons[nextIndex]);
+        },
+        setActive(button) {
+            this.activeButton = button;
+            this.updateServiceList();
+            
+            this.$nextTick(() => {
+                this.$forceUpdate();
+            });
+        }
+    },
+    watch: {
+        id(newId) {
+            const foundButton = this.buttons.find((btn) => btn.id === Number(newId));
+            if (foundButton) {
+                this.activeButton = foundButton;
+            } else {
+                this.error = "Button not found";
+            }
+        },
+        activeButton() {
+            this.updateServiceList();
+        }
     }
-    return { display: 'none' }; // Остальные кнопки скрываем
-  }
-
-  // Обычное расположение для десктопа
-  const total = this.buttons.length;
-  const startAngle = -180;
-  const endAngle = 0;
-  const angle = startAngle + ((endAngle - startAngle) / (total - 1)) * index;
-  const radius = 470;
-
-  const x = Math.cos((angle * Math.PI) / 180) * radius;
-  const y = Math.sin((angle * Math.PI) / 180) * radius;
-
-  return { transform: `translate(${x}px, ${y}px)` };
 }
-,
-
-  prevButton() {
-    const currentIndex = this.buttons.indexOf(this.activeButton);
-    const prevIndex = (currentIndex - 1 + this.buttons.length) % this.buttons.length;
-    this.setActive(this.buttons[prevIndex]);
-  },
-  nextButton() {
-    const currentIndex = this.buttons.indexOf(this.activeButton);
-    const nextIndex = (currentIndex + 1) % this.buttons.length;
-    this.setActive(this.buttons[nextIndex]);
-  },
-  setActive(button) {
-  this.activeButton = button;
-  this.updateServicesList();
-
-  // Принудительное обновление для правильного позиционирования
-  this.$nextTick(() => {
-    this.$forceUpdate();
-  });
-}
-,
-
-watch: {
-  activeButton() {
-    this.updateServicesList(); // Следим за изменением activeButton
-  }
-}
-  }
- 
-};
 </script>
 
 <style scoped>
-/* Общий контейнер */
+
 .circle-container {
   position: relative;
   margin-bottom: 200px;
@@ -183,7 +186,7 @@ watch: {
   justify-content: center;
   align-items: center;
 }
-/* Концентрические круги */
+
 .circle {
   position: absolute;
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -220,7 +223,7 @@ watch: {
   width: 1100px;
   height: 1100px;
 }
-/* Центральный текст */
+
 .center-content {
   position: absolute;
   top: 294px;
@@ -303,8 +306,14 @@ watch: {
   font-weight: 700;
   text-align: center;
   text-transform: uppercase;
-  }
-/* Кнопки */
+  cursor: pointer;
+    transition: 0.3s;
+}
+
+.cont-us:hover {
+  box-shadow: 0 0 10px #3498db, 0 0 40px #3498db;
+}
+
 .circle-button {
   position: absolute;
   width: 100px;
@@ -321,7 +330,7 @@ watch: {
   cursor: pointer;
   transition: 0.3s;
 }
-/* Выделение активной кнопки */
+
 .circle-button.active {
   border: 1px solid transparent;
   border-radius: 50%;
@@ -331,24 +340,77 @@ watch: {
 }
 
 .circle-navigation {
-  opacity: 0;
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .circle-button {
+        width: 100px;
+        height: 100px;
+        font-size: 14px;
+    }
+    
+    .circle-button:hover {
+        transform: scale(1.1);
+    }
+
+}
+
+@media (max-width: 768px) {
+  .circle-navigation {
+      display: flex;
+      justify-content: center;
+      position: absolute;
+      top: 310px;
+      width: 100%;
+  }
+  
+  .arrow {
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: white;
+      margin: 0 20px;
+  }
+  .circle-container {
+      overflow-x: clip;
+      
+  }
+
+  .circle-button.active {
+         
+        transform: translateX(-50%);
+        z-index: 1000;
+        font-size: 16px;
+    }
+    
+    .circle-button:not(.active) {
+        opacity: 0.6;
+        transition: opacity 0.3s;
+    }
+    
+    .circle-button:not(.active):hover {
+        opacity: 0.9;
+    }
 }
 
 @media (max-width: 425px) {
     .circle-container {
       overflow: clip;
-      height: 1507px;
+      height: 1598px;
   }
 
   .center-content {
-    
-    top:447px;
+    max-width: 387px;
+    align-content: center;
+    top:391px;
   }
   .circle-navigation {
   display: flex;
   justify-content: center;
   position: absolute;
-  top: 382px;
+  top: 331px;
   width: 100%;
   opacity: 1;
 }
@@ -362,6 +424,12 @@ watch: {
   margin: 0 20px;
 }
 
-}
-
+.circle-button.active {
+        top: 20px ;
+        left: 50% ;
+        transform: translateX(-50%);
+        z-index: 1000;
+        font-size: 14px;
+    }
+  }
 </style>

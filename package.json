@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "gsap": "^3.12.7",
-    "swiper": "^11.2.4"
-  }
-}

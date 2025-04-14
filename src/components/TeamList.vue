@@ -106,7 +106,8 @@
     border-image-slice: 1;
     display: flex;
     align-items: center;
-    justify-content: center;;
+    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
 
   .background {
@@ -121,6 +122,7 @@
     border-image-source: linear-gradient(-45deg, #0cbaf1, #e95ce9);
     border-image-slice: 1;
     box-shadow: 0 0 10px #3498db, 0 0 40px #3498db;
+    transform: scale(1.02);
   }
   
   .our-team-image {

@@ -278,6 +278,7 @@ border-bottom: 1px solid rgba(255, 255, 255, 0.35);
     
     .about-question {
         margin-bottom: 100px;
+        flex-wrap: wrap;
     }
 
     

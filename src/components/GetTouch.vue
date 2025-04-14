@@ -51,7 +51,7 @@ const form = ref({
 const handleSubmit = () => {
   console.log('Отправлено:', form.value);
   
-  // Сброс формы
+  
   form.value = {
     firstName: '',
     lastName: '',
@@ -60,8 +60,7 @@ const handleSubmit = () => {
     message: '',
   };
   
-  // Альтернатива (если форма большая):
-  // Object.keys(form.value).forEach(key => form.value[key] = '');
+
 };
 </script>
 
@@ -315,12 +314,12 @@ font-weight: 300;
     }
 
     .form-group textarea {
-        width: 392px;
+        width: 100%;
         height: 137px;
     }
 
     .form-group input {
-        width: 392px;
+        width: 100%;
     }
 
     

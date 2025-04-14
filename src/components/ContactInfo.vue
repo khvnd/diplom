@@ -108,9 +108,15 @@
 
     @media (max-width: 425px) {
         .contact-info {
+            flex-wrap: wrap;
             flex-direction: row-reverse;
             justify-content: center;
             margin-bottom: 100px;
+        }
+
+        .contact-item {
+            width: 379px;
+            height: 291px;
         }
     }
 </style>
